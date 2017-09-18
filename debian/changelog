@@ -1,15 +1,11 @@
-caja (1.18.5-2+soulmate1.is.1.16.6+1.1) stretch; urgency=medium
+caja (1.16.6-1+deb9u1) stretch; urgency=medium
 
-  * Dummy update due to betsy new release
+  [ Pablo Barciela ]
+  * debian/patches:
+    + Add 0001_fix-high-cpu-while-loading-background-image.patch. (Closes:
+      #875717).
 
- -- Luis Antonio Garcia Gisbert <luisgg@gmail.com>  Tue, 10 Apr 2018 22:09:00 +0000
-
-caja (1.18.3-2+soulmate1.is.1.16.6+1.1) stretch; urgency=medium
-
-  * Non-maintainer upload.
-  * Downgrade to 1.16.6-1 to avoid desktop redraw issues
-
- -- Luis Antonio Garcia Gisbert <luisgg@gmail.com>  Wed, 13 Sep 2017 14:29:29 +0000
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 18 Sep 2017 13:36:12 +0200
 
 caja (1.16.6-1) unstable; urgency=medium
 

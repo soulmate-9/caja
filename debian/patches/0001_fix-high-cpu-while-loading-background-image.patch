@@ -1,0 +1,29 @@
+From b9cf3667fa5563d52bffb9e3618aa41c7c908aa6 Mon Sep 17 00:00:00 2001
+From: Pablo Barciela <scow@riseup.net>
+Date: Fri, 1 Sep 2017 02:25:53 +0200
+Subject: [PATCH] Fix: high cpu while loading background image
+
+Fixes https://github.com/mate-desktop/caja/issues/606
+---
+ eel/eel-background.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/eel/eel-background.c b/eel/eel-background.c
+index a3392c2b..53e0a652 100644
+--- a/eel/eel-background.c
++++ b/eel/eel-background.c
+@@ -1062,6 +1062,14 @@ void
+ eel_bg_load_from_gsettings (EelBackground *self,
+ 			    GSettings     *settings)
+ {
++    char *keyfile = g_settings_get_string (settings, MATE_BG_KEY_PICTURE_FILENAME);
++
++    if (!g_file_test (keyfile, G_FILE_TEST_EXISTS) && (*keyfile != '\0'))
++    {
++        *keyfile = '\0';
++        g_settings_set_string (settings, MATE_BG_KEY_PICTURE_FILENAME, keyfile);
++    }
++
+     if (self->details->bg)
+         mate_bg_load_from_gsettings (self->details->bg,
+         			     settings);
