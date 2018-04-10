@@ -1,3 +1,9 @@
+caja (1.18.5-2+soulmate1.is.1.16.6+1.1) stretch; urgency=medium
+
+  * Dummy update due to betsy new release
+
+ -- Luis Antonio Garcia Gisbert <luisgg@gmail.com>  Tue, 10 Apr 2018 22:43:05 +0000
+
 caja (1.16.6-1+deb9u1) stretch; urgency=medium
 
   [ Pablo Barciela ]
